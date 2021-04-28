@@ -64,6 +64,6 @@ class CreatesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def create_params
-      params.require(:create).permit(:Event, :title, :description, :location)
+      params.require(:create).permit(:title, :description, :location, :date)
     end
 end
