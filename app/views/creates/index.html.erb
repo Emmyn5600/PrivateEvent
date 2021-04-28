@@ -2,32 +2,44 @@
 
 <h1>Creates</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Event</th>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Location</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<% @creates.each do | create | %>
+  <div class="box">
+  	<article class="media">
+  		<div class="media-content">
+  			<div class="content">
+			   <% if user_signed_in? %>
+			   <div class="media-left is-flex">
+				<strong><%= create.user.username %></strong><br/>
+				</div>
+				<p><%= create.create %></p>
+               <% else %>
+				<strong>Log in to see the author's name</strong>
+				<p><%= create.create %></p>
+				<% end %>
+				<p>createed on: <%= create.created_at.strftime("%d-%m-%Y (%A)") %> </p>		
+				</div>
+        <% if user_signed_in? && current_user.id == create.user_id %>
+  			<nav class="level">
+  				<div class="level-left is-mobile">
+						
+  					<%= link_to create, class: "level-item" do %>
+  					  <span class="icon"><i class="fa fa-link" aria-hidden="true"></i></span>
+  					<% end %>
 
-  <tbody>
-    <% @creates.each do |create| %>
-      <tr>
-        <td><%= create.Event %></td>
-        <td><%= create.title %></td>
-        <td><%= create.description %></td>
-        <td><%= create.location %></td>
-        <td><%= link_to 'Show', create %></td>
-        <td><%= link_to 'Edit', edit_create_path(create) %></td>
-        <td><%= link_to 'Destroy', create, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  					<%= link_to edit_create_path(create), class: "level-item ml-2" do %>
+  					  <span class="icon"><i class="fa fa-pencil" aria-hidden="true"></i></span>
+  					<% end %>
 
-<br>
+  					<%= form_tag create, method: :delete do %>
+  						<%= button_tag class: "no-button", data: { confirm: "Are you sure you want to delete this create?" } do %>
+  							<span class="icon"><i class="fa fa-trash-o" aria-hidden="true"></i></span>
+  						<% end %>
+  					<% end %>
 
-<%= link_to 'New Create', new_create_path %>
+  				</div>
+  			</nav>
+        <% end %>
+  		</div>
+  	</article>
+  </div>
+<% end %>

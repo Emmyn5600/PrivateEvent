@@ -6,5 +6,5 @@ class User < ApplicationRecord
 
   has_many :creates, dependent: :destroy
 
-  validates :username, presence: true, length: { minumum: 2, maximum: 30 }, uniqueness: true
+  validates :username, length: { minumum: 2, maximum: 30 }, uniqueness: true
 end
