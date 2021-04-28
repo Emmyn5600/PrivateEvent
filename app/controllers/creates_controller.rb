@@ -25,7 +25,7 @@ class CreatesController < ApplicationController
 
     respond_to do |format|
       if @create.save
-        format.html { redirect_to @create, notice: "Create was successfully created." }
+        format.html { redirect_to @create, notice: "Event was successfully created." }
         format.json { render :show, status: :created, location: @create }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,7 @@ class CreatesController < ApplicationController
   def update
     respond_to do |format|
       if @create.update(create_params)
-        format.html { redirect_to @create, notice: "Create was successfully updated." }
+        format.html { redirect_to @create, notice: "Event was successfully updated." }
         format.json { render :show, status: :ok, location: @create }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -51,7 +51,7 @@ class CreatesController < ApplicationController
   def destroy
     @create.destroy
     respond_to do |format|
-      format.html { redirect_to creates_url, notice: "Create was successfully destroyed." }
+      format.html { redirect_to creates_url, notice: "Event was successfully destroyed." }
       format.json { head :no_content }
     end
   end
