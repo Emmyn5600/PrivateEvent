@@ -1,11 +1,9 @@
 class CreatesController < ApplicationController
   before_action :set_create, only: %i[ show edit update destroy ]
-  before_action :authenticate_user!, only: %i[new edit update destroy] 
 
   # GET /creates or /creates.json
   def index
-    @create = Create.all.order('created_at DESC') 
-    @create = Create.new 
+    @creates = Create.all
   end
 
   # GET /creates/1 or /creates/1.json
@@ -14,7 +12,7 @@ class CreatesController < ApplicationController
 
   # GET /creates/new
   def new
-    @create = current_user.creates.build 
+    @create = Create.new
   end
 
   # GET /creates/1/edit
@@ -23,7 +21,7 @@ class CreatesController < ApplicationController
 
   # POST /creates or /creates.json
   def create
-    @create = current_user.posts.build(create_params)
+    @create = Create.new(create_params)
 
     respond_to do |format|
       if @create.save
@@ -66,6 +64,6 @@ class CreatesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def create_params
-      params.require(:create).permit(:create)
+      params.require(:create).permit(:Event, :title, :description, :location)
     end
 end
