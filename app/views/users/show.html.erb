@@ -1,0 +1,7 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Your events:</strong>
+  <% @user_attendance.each do |attendance| %> 
+    <%= upcoming_events %>
+  <% end %>
