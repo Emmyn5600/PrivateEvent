@@ -13,7 +13,7 @@ class EventsController < ApplicationController
 
   # GET /events/new
   def new
-    @event = current_user.events.build
+    @event = current_user.events.build(event_params)
   end
 
   # GET /events/1/edit
