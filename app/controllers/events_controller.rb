@@ -4,6 +4,7 @@ class EventsController < ApplicationController
 
   # GET /events or /events.json
   def index
+    @events = Event.all.order('created_at DESC')
     @events = Event.all
   end
 
@@ -13,7 +14,7 @@ class EventsController < ApplicationController
 
   # GET /events/new
   def new
-    @event = current_user.events.build(event_params)
+    @event = current_user.events.build
   end
 
   # GET /events/1/edit

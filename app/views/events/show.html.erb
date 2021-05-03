@@ -1,4 +1,21 @@
-<p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+    <p>Location: <%= @event.location %></p> 
+    <p>Published By: <%= @event.creator.username %></p>
+    <p><%= @event.description %></p>
+
+        <% if @event.attendees.any? %>
+            <% @event.attendees.each do |attendee| %>
+                <span class="attendee">
+                    <%= attendee.username %>
+                </span> <br/>
+            <% end %>
+        <% else %>
+            No attendees
+        <% end %><br/>
+
+    <div>
+    <%= link_to "Back", events_path, class: "btn btn-sm btn-default" %>
+        <%= link_to "Edit", edit_event_path, class: "btn btn-sm btn-success" %>
+        <%= button_to "Delete", event_path(@event), 
+          method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-sm btn-danger" %>
+    </div>

@@ -1,2 +1,8 @@
-<h1>User#show</h1>
-<p>Find me in app/views/user/show.html.erb</p>
+<% if @user.attended_events.any? %>
+	<h2>Upcoming Events</h2> 
+	<ul class="media-list">
+		<%= render @upcoming_events %>
+	</ul>
+<% else %>
+	<h2>No Upcoming Events</h2>
+<% end %>
