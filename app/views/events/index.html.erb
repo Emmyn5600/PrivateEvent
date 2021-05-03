@@ -1,30 +1,24 @@
-<p id="notice"><%= notice %></p>
+<div class="columns">
+  <div class="column is-11 is-offset-1">
+    <h1 class="title mt-4">All Events</h1>
+    <div class="columns">
+      <div class="column is-two-fifths">
+        <div class="subtitle is-5 mt-4">Upcoming Events:</div>
+        <ul>
+          <%= show_event_list(@upcoming_events) %>
+        </ul>
+      </div>
+      <div class="column"></div>
 
-<h1>Events</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @events.each do |event| %>
-      <tr>
-       <p>Location: <%= event.location %></p> 
-       <p>Published By: <%= event.creator.username %></p>
-       <p>Description: <%= event.description %></p>
-       <p>Date: <%= event.date %></p>
-        <td><%= link_to 'Show', event %></td>
-        <td><%= link_to 'Edit', edit_event_path(event) %></td>
-        <td><%= button_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Event', new_event_path %>
-
+      <div class="column is-two-fifths">
+        <div class="subtitle mt-4">Past Events:</div>
+        <ul>
+          <%= show_event_list(@past_events) %>
+        </ul>
+      </div>
+    </div>
+    <p class="button is-info is-light mt-6"> 
+      <%= link_to 'New Event', new_event_path %> 
+    </p>  
+  </div>
+</div>
