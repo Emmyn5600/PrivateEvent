@@ -1,8 +1,9 @@
-
+    
     <p>Location: <%= @event.location %></p> 
     <p>Published By: <%= @event.creator.username %></p>
-    <p><%= @event.description %></p>
-
+    <p>Description:<%= @event.description %></p>
+    <p>Date:<%= @event.date %></p>
+    
         <% if @event.attendees.any? %>
             <% @event.attendees.each do |attendee| %>
                 <span class="attendee">

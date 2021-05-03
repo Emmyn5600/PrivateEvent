@@ -12,6 +12,10 @@
   <tbody>
     <% @events.each do |event| %>
       <tr>
+       <p>Location: <%= event.location %></p> 
+       <p>Published By: <%= event.creator.username %></p>
+       <p>Description: <%= event.description %></p>
+       <p>Date: <%= event.date %></p>
         <td><%= link_to 'Show', event %></td>
         <td><%= link_to 'Edit', edit_event_path(event) %></td>
         <td><%= button_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
