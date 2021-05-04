@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  get 'user/show'
+  get "/users/:id", to: "users#show", :as => :user_show
   devise_for :users,  :controllers  => { registrations: 'registrations' }
   resources :events
+  resources :event_attendances
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root "events#index"
 end

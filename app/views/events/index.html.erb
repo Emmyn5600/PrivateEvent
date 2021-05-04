@@ -1,30 +1,24 @@
 <div class="columns">
-  <div class="column is-11 is-offset-1">
+  <div class="column is-10 is-offset-1">
     <h1 class="title mt-4">All Events</h1>
     <div class="columns">
-      <div class="column is-two-fifths">
+      <div class="column">
         <div class="subtitle is-5 mt-4">Upcoming Events:</div>
-         <div class="upcoming">
-        <ul>
+         <ul>
           <%= show_event_list(@upcoming_events) %>
         </ul>
-        <button class="button is-primary is-light">Read More</button>
-         </div>
       </div>
       <div class="column"></div>
 
-      <div class="column is-two-fifths">
+      <div class="column">
         <div class="subtitle mt-4">Past Events:</div>
-        <div class="upcoming">
         <ul>
           <%= show_event_list(@past_events) %>
         </ul>
-        <button class="button is-primary is-light">Read More</button>
-         </div>
       </div>
     </div>
-    <p class="button is-info is-light mt-6"> 
-      <%= link_to 'New Event', new_event_path %> 
+    <p class="button is-primary is-light mt-6"> 
+      <%= link_to 'New Event', new_event_path, class: 'a-reset' %> 
     </p>  
   </div>
 </div>
