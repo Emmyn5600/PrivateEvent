@@ -1,9 +1,6 @@
-<%= form_with(model: attendance) do |form| %>
-  <div class="field">
-    <%= form.hidden_field :attended_event_id, value: @event.id %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit "Attend this Event"%>
-  </div>
+<% if user_signed_in? %>
+	<%= form_for(current_user.event_attendees.build(attended_event_id: @event.id)) do |f| %>
+	<%= f.hidden_field :attended_event_id %>
+		<%= f.submit "Attend", class: "btn btn-sm btn-primary" %>
+	<% end %>
 <% end %>

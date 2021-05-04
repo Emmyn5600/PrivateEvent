@@ -19,7 +19,7 @@ module EventsHelper
   def show_attendee_lists(attendees)
     out = ''
     @event.attendees.each do |attendee|
-      out += "<li>#{attendee.name}</li>"
+      out += "<li>#{attendee.username}</li>"
     end
     out.html_safe
   end
@@ -35,4 +35,5 @@ module EventsHelper
     out += link_to 'Back', events_path
     out.html_safe
   end
+
 end

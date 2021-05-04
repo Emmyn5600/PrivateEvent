@@ -1,31 +1,36 @@
-<p>
-  <strong>Title:</strong>
-  <%= @event.title %>
-</p>
+<div class="columns">
+  <div class="column columns is-half is-offset-one-quarter box mt-6">
+    <div class="column is-10 is-offset-1">
+    <p class="title">
+      <%= @event.title %>
+    </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @event.description %>
-</p>
+    <p>
+      Description:
+      <%= @event.description %>
+    </p>
 
-<p>
-  <strong>Date:</strong>
-  <%= @event.date %>
-</p>
+    <p>
+      Date:
+      <%= @event.date %>
+    </p>
 
-<p>
-  <strong>Location:</strong>
-  <%= @event.location %>
-</p>
+    <p>
+      Location:
+      <%= @event.location %>
+    </p>
 
-<br>
-<%= show_attendance_button(@event, @attendance) %>
+    <p>
+      <%= render 'attend_cancel' %>
+    </p>
 
-<strong>Attendees:</strong>
+    Attendees:
 
-<ol>
-  <%= show_attendee_lists(@attendees) %>
-</ol>
+    <ol>
+      <%= show_attendee_lists(@attendees) %>
+    </ol>
 
-<br>
-<%= event_controls(@event) %>
+    <%= event_controls(@event) %>
+    </div>
+  </div>
+</div>

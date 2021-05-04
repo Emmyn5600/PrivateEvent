@@ -24,7 +24,7 @@
   	<nav class="navbar is-primary is-light">
   		<div class="navbar-brand">
   		<%= link_to root_path, class: "navbar-item" do %>
-  			<h1 class="title is-5">Private Event</h1>
+  			<h1 class="title is-4 has-text-white">Private Events</h1>
   		<% end %>
 			<div class="navbar-burger burger" data-target="navbarExample">
 					<span></span>
@@ -38,21 +38,21 @@
           <div class="navbar-item">
             <div class="field is-grouped">
               <p class="control">
-                <%= link_to 'New Event', new_event_url, class: "button is-info is-inverted" %>
+                <%= link_to 'New Event', new_event_url, class: "button is-primary is-inverted" %>
               </p>
               <% if user_signed_in? %>
                 <p class="control">
-                  <%= link_to current_user.username, edit_user_registration_path, class: "button is-info" %>
+                  <%= link_to current_user.username, edit_user_registration_path, class: "button is-primary" %>
                 </p>
                 <p>
-                  <%= link_to "Logout", destroy_user_session_path, method: :delete, class:"button is-info" %>
+                  <%= link_to "Logout", destroy_user_session_path, method: :delete, class:"button is-primary" %>
                 </p>
               <% else %>
               <p class="control">
-                <%= link_to 'Sign In', new_user_session_path, class: "button is-info" %>
+                <%= link_to 'Sign In', new_user_session_path, class: "button is-primary" %>
               </p>
               <p class="control">
-                <%= link_to 'Sign Up', new_user_registration_path, class: "button is-info" %>
+                <%= link_to 'Sign Up', new_user_registration_path, class: "button is-primary" %>
               </p>
               <% end %>
 
