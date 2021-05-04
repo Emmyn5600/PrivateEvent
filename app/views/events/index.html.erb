@@ -1,24 +1,29 @@
-<div class="columns">
-  <div class="column is-1 is-offset-1">
-    <h1 class="title mt-4">All Events</h1>
-    <div class="columns">
-      <div class="column">
-        <div class="subtitle is-5 mt-4">Upcoming Events:</div>
-         <ul>
-          <%= show_event_list(@upcoming_events) %>
-        </ul>
+<div class="homepage">
+   <div class="container is-max-desktop mt-6">
+      <div class="notification is-primary">
+        <span class="icon-text">
+            <span class="icon">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+            </span>
+            <span>ALL THE CREATED EVENT</span>
+        </span>
       </div>
-      <div class="column"></div>
+    </div>
 
-      <div class="column">
-        <div class="subtitle mt-4">Past Events:</div>
-        <ul>
-          <%= show_event_list(@past_events) %>
-        </ul>
-      </div>
+    <div class="upcoming-event">
+     <span>Upcoming Event: <i class="fa fa-arrow-right" aria-hidden="true"></i></span>
+          <ul>
+            <%= show_event_list(@upcoming_events) %>
+          </ul>
+    </div>
+
+    <div class="upcoming-event">
+     <span>Past Event Event: <i class="fa fa-arrow-left" aria-hidden="true"></i></span>
+          <ul>
+             <%= show_event_list(@past_events) %>
+          </ul>
     </div>
     <p class="button is-primary is-light mt-6"> 
       <%= link_to 'New Event', new_event_path, class: 'a-reset' %> 
-    </p>  
-  </div>
+    </p> 
 </div>

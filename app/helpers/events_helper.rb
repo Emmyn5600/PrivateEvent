@@ -36,4 +36,24 @@ module EventsHelper
     out.html_safe
   end
 
+  def attend_event_button
+    out = ''
+    if user_signed_in?
+      out += "<form class=\"new_event_attendee\" id=\"new_event_attendee\" action=\"/event_attendees\" accept-charset=\"UTF-8\" method=\"post\" >"
+      out += "<input type=\"hidden\" name=\"authenticity_token\" value=\"LAtzzoaWGmtxNql4lgIOhs3O0UpH2sK-kE25RTTHI6R2QSJDJQmu6rbzOxSBgYWy36ufttSeOl7bUoTpksQZUA\" >"
+      out += "<input type=\"hidden\" value=\"17\" name=\"event_attendee[attended_event_id]\" id=\"event_attendee_attended_event_id\" >"
+      out += "<input type=\"submit\" name=\"commit\" value=\"Attend\" data-disable-with=\"Attend\">"
+      out += "</form>"
+    end
+    out.html_safe
+  end
+
+  def attendance_or_cancel
+    if user_signed_in? && current_user.attending?(@event)
+      render 'cancel'
+    else
+      render 'attend'
+    end
+  end
+
 end
