@@ -4,17 +4,23 @@
     <div class="columns">
       <div class="column is-two-fifths">
         <div class="subtitle is-5 mt-4">Upcoming Events:</div>
+         <div class="upcoming">
         <ul>
           <%= show_event_list(@upcoming_events) %>
         </ul>
+        <button class="button is-primary is-light">Read More</button>
+         </div>
       </div>
       <div class="column"></div>
 
       <div class="column is-two-fifths">
         <div class="subtitle mt-4">Past Events:</div>
+        <div class="upcoming">
         <ul>
           <%= show_event_list(@past_events) %>
         </ul>
+        <button class="button is-primary is-light">Read More</button>
+         </div>
       </div>
     </div>
     <p class="button is-info is-light mt-6"> 
