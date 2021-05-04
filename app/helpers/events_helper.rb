@@ -3,7 +3,11 @@ module EventsHelper
     out = ''
     events.each do |event|
       out += "<div class=\"box\">"
+      if user_signed_in?
       out += "<ul><li>#{link_to event.title, event_url(event), class: 'event-title'}</li>"
+      elsif
+      out += "<ul><li>#{link_to event.title, new_event_path, class: 'event-title'}</li>"
+      end  
       out += "<li><b>Description:</b> #{event.description}</li>"
       out += "<li><b>Date:</b> #{event.date}</li>"
       out += "<li><b>Location:</b> #{event.location}</li></ul>"
