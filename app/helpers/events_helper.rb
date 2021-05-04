@@ -4,9 +4,9 @@ module EventsHelper
     events.each do |event|
       out += "<div class=\"box\">"
       out += "<ul><li>#{link_to event.title, event_url(event), class: 'event-title'}</li>"
-      out += "<li>Description: #{event.description}</li>"
-      out += "<li>Date: #{event.date}</li>"
-      out += "<li>Location: #{event.location}</li></ul>"
+      out += "<li><b>Description:</b> #{event.description}</li>"
+      out += "<li><b>Date:</b> #{event.date}</li>"
+      out += "<li><b>Location:</b> #{event.location}</li></ul>"
       out += "</div>"
     end
     out.html_safe
@@ -27,12 +27,12 @@ module EventsHelper
   def event_controls(event)
     out = ''
     if user_signed_in? && current_user.id == event.creator_id
-      out += link_to 'Edit', edit_event_path(@event)
-      out += ' | '
-      out += button_to 'Delete', event, method: :delete, data: { confirm: 'Are you sure?' }
-      out += ' | '
+      out += "<div class=\"is-flex mb-3\">"
+      out += link_to 'Edit', edit_event_path(@event), class: 'button is-warning is-outlined mr-2'
+      out += button_to 'Delete', event, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button is-danger is-outlined'
+      out += "</div>"
     end
-    out += link_to 'Back', events_path
+    out += link_to 'Back', events_path, class: 'button is-outlined'
     out.html_safe
   end
 
@@ -41,7 +41,7 @@ module EventsHelper
     if user_signed_in?
       out += "<form class=\"new_event_attendee\" id=\"new_event_attendee\" action=\"/event_attendees\" accept-charset=\"UTF-8\" method=\"post\" >"
       out += "<input type=\"hidden\" name=\"authenticity_token\" value=\"LAtzzoaWGmtxNql4lgIOhs3O0UpH2sK-kE25RTTHI6R2QSJDJQmu6rbzOxSBgYWy36ufttSeOl7bUoTpksQZUA\" >"
-      out += "<input type=\"hidden\" value=\"17\" name=\"event_attendee[attended_event_id]\" id=\"event_attendee_attended_event_id\" >"
+      out += "<input type=\"hidden\" value=\"@event_id\" name=\"event_attendee[attended_event_id]\" id=\"event_attendee_attended_event_id\" >"
       out += "<input type=\"submit\" name=\"commit\" value=\"Attend\" data-disable-with=\"Attend\">"
       out += "</form>"
     end

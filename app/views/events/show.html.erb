@@ -5,32 +5,35 @@
       <%= @event.title %>
     </p>
 
-    <p>
-      Description:
+    <p class="mb-3">
+      <b class="has-text-primary">Description:</b><br>
       <%= @event.description %>
     </p>
 
-    <p>
-      Date:
+    <p class="mb-3">
+      <i class="fa fa-calendar-o has-text-primary is-size-6 mr-2" aria-hidden="true"></i> 
       <%= @event.date %>
     </p>
 
-    <p>
-      Location:
+    <p class="mb-3">
+      <i class="fa fa-map-marker has-text-primary is-size-4 mr-2" aria-hidden="true"></i> 
       <%= @event.location %>
     </p>
 
-    <p>
+    <p class="my-3 has-text-primary">
+    Attendees:
+    <ol class="ml-6">
+      <%= show_attendee_lists(@attendees) %>
+    </ol>
+    </p>
+
+    <p class="mt-6">
       <%= render 'attend_cancel' %>
     </p>
 
-    Attendees:
-
-    <ol>
-      <%= show_attendee_lists(@attendees) %>
-    </ol>
-
+    <p class="my-3">
     <%= event_controls(@event) %>
+    </p>
     </div>
   </div>
 </div>

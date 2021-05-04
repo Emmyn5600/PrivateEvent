@@ -1,29 +1,40 @@
 <div class="homepage">
-   <div class="container is-max-desktop mt-6">
-      <div class="notification is-primary">
-        <span class="icon-text">
-            <span class="icon">
-              <i class="fa fa-calendar" aria-hidden="true"></i>
-            </span>
-            <span>ALL THE CREATED EVENT</span>
-        </span>
+
+  <div class="columns is-max-desktop mt-6">
+    <div class="notification column is-10 is-offset-1 is-primary is-flex is-justify-content-center is-align-content-center">
+      <span class="title has-text-white">
+         <i class="fa fa-calendar mr-5" aria-hidden="true"></i>ALL EVENTS
+      </span>
+    </div>
+  </div>
+
+  <div class="columns is-max-desktop mt-6">
+  
+    <div class="columns column is-10 is-offset-1 ">
+      <div class="upcoming-event column is-two-fifths">
+        <p class="mb-4 subtitle">
+          <i class="fa fa-arrow-right mr-3" aria-hidden="true"></i>Upcoming Event: 
+        </p>
+        <ul>
+          <%= show_event_list(@upcoming_events) %>
+        </ul>
+      </div>
+      <div class="column"></div>    
+      <div class="upcoming-event column is-two-fifths">
+        <p class="mb-4 subtitle">
+          <i class="fa fa-arrow-left mr-3" aria-hidden="true"></i>Past Event Event: 
+        </p>
+        <ul>
+          <%= show_event_list(@past_events) %>
+        </ul>
       </div>
     </div>
+  </div>
 
-    <div class="upcoming-event">
-     <span>Upcoming Event: <i class="fa fa-arrow-right" aria-hidden="true"></i></span>
-          <ul>
-            <%= show_event_list(@upcoming_events) %>
-          </ul>
-    </div>
 
-    <div class="upcoming-event">
-     <span>Past Event Event: <i class="fa fa-arrow-left" aria-hidden="true"></i></span>
-          <ul>
-             <%= show_event_list(@past_events) %>
-          </ul>
-    </div>
+  <div class="column is-10 is-offset-1">
     <p class="button is-primary is-light mt-6"> 
       <%= link_to 'New Event', new_event_path, class: 'a-reset' %> 
     </p> 
+  </div>
 </div>
