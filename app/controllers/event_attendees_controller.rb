@@ -1,10 +1,10 @@
 class EventAttendee < ApplicationRecord
   def create
-    @attendance = EventAttendee.new(event_attendance_params)
+    @attendance = EventAttendance.new(event_attendance_params)
     @attendance.attendee_id = current_user.id
 
     respond_to do |format|
-      if EventAttendee.where('attendee_id = ? AND attended_event_id = ?', @attendance.attendee_id,
+      if EventAttendance.where('attendee_id = ? AND attended_event_id = ?', @attendance.attendee_id,
                                @attendance.attended_event_id).exists?
         format.html do
           redirect_to event_path(@attendance.attended_event_id), alert: "You're already attending this event."

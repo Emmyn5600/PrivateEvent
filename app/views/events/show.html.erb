@@ -1,13 +1,31 @@
-    
-    <p>Location: <%= @event.location %></p> 
-    <p>Published By: <%= @event.creator.username %></p>
-    <p>Description:<%= @event.description %></p>
-    <p>Date:<%= @event.date %></p>
+<p>
+  <strong>Title:</strong>
+  <%= @event.title %>
+</p>
 
-    <%= show_attendance_button(@event, @attendance) %>
+<p>
+  <strong>Description:</strong>
+  <%= @event.description %>
+</p>
 
-    <% show_attendee_lists(@attendees) %>
+<p>
+  <strong>Date:</strong>
+  <%= @event.date %>
+</p>
 
-    <div>
-       <%= event_controls(@event)%>
-    </div>
+<p>
+  <strong>Location:</strong>
+  <%= @event.location %>
+</p>
+
+<br>
+<%= show_attendance_button(@event, @attendance) %>
+
+<strong>Attendees:</strong>
+
+<ol>
+  <%= show_attendee_lists(@attendees) %>
+</ol>
+
+<br>
+<%= event_controls(@event) %>

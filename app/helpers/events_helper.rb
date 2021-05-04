@@ -13,12 +13,12 @@ module EventsHelper
   end
 
   def show_attendance_button(event, attendance)
-    render 'attend', attendance: attendance if user_signed_in? && event.date > Time.now
+    render 'attend', attendance: attendance if user_signed_in?
   end
 
   def show_attendee_lists(attendees)
     out = ''
-    attendees.each do |attendee|
+    @event.attendees.each do |attendee|
       out += "<li>#{attendee.name}</li>"
     end
     out.html_safe
@@ -29,7 +29,7 @@ module EventsHelper
     if user_signed_in? && current_user.id == event.creator_id
       out += link_to 'Edit', edit_event_path(@event)
       out += ' | '
-      out += link_to 'Delete', event, method: :delete, data: { confirm: 'Are you sure?' }
+      out += button_to 'Delete', event, method: :delete, data: { confirm: 'Are you sure?' }
       out += ' | '
     end
     out += link_to 'Back', events_path
