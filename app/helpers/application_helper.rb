@@ -24,9 +24,6 @@ module ApplicationHelper
     if user_signed_in?
       out += link_to 'Create Event', new_event_url, class: 'button is-primary is-inverted'
       out += "<p class=\"control\">"
-      out += link_to 'Your Events', user_path, class: 'button is-primary'
-      out += "</p>"
-      out += "<p class=\"control\">"
       out += link_to current_user.username, edit_user_registration_path, class: 'button is-primary'
       out += "</p>"
       out += "<p>"
