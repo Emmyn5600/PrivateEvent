@@ -1,6 +1,10 @@
-<h1>Editing Event</h1>
-
-<%= render 'form', event: @event %>
-
-<%= link_to 'Show', @event %>
-<%= link_to 'Back', events_path %>
+<div class="columns mt-5">
+  <div class="column is-10 is-offset-1">
+    <h1 class="title">Editing Event</h1>
+      <%= render 'form', event: @event %>
+    <div class="mt-6">
+      <%= link_to 'Back to Events', @event, class: "button is-info is-outlined" %>
+      <%= link_to 'Go to Homepage', events_path, class: "button ml-2 is-link is-outlined" %>
+    </div>
+  </div>
+</div>

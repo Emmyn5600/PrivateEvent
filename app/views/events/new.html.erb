@@ -1,6 +1,9 @@
-<h1 class="title">Create a new Event</h1>
-  <%= render 'form', event: @event %>
-
-<p class="control">
-  <%= link_to 'Cancel', events_path, class: "button is-dark" %>
-</p>
+<div class="columns mt-5">
+  <div class="column is-10 is-offset-1">
+    <h1 class="title">Create a new Event</h1>
+      <%= render 'form', event: @event %>
+      <div class="mt-6">
+        <%= link_to 'Cancel', events_path, class: "button is-dark is-outlined mt-6" %>
+      </div>
+  </div>
+</div>

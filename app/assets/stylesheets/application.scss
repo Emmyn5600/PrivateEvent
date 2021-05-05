@@ -17,7 +17,7 @@
 @import "bulma";
 
 .upcoming {
-    height: 40vh;
+   height: 40vh;
    border: 3px solid #f7f1f1;
 }
 
@@ -26,7 +26,7 @@
 }
 
 .event-title {
-   color: #0a7565;
+   color: #229c8a;
    font-size: 18px;
    font-weight: 600;
 }
@@ -38,8 +38,20 @@
    text-decoration: none;
 }
 
-.title-event {
-   background-color: red;
-   text-align: center;
-   font-size: 50px;
+.new-form-label {
+   font-weight: 500;
+   font-size: 17px;
 }
+
+.textarea:not([rows]) {
+   min-height: 50px;
+   margin-top: 10px;
+}
+
+.new-form-description {
+   height: 120px;
+}
+
+.date { margin-top: -8px; }
+
+.date-label { margin-right: 10px; }

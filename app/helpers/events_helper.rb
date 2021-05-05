@@ -29,10 +29,10 @@ module EventsHelper
     if user_signed_in? && current_user.id == event.creator_id
       out += "<div class=\"is-flex mb-3\">"
       out += link_to 'Edit', edit_event_path(@event), class: 'button is-warning is-outlined mr-2'
-      out += button_to 'Delete', event, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button is-danger is-outlined'
+      out += button_to 'Delete', event, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button is-danger is-outlined mr-2'
+      out += link_to 'Back', events_path, class: 'button is-outlined'
       out += "</div>"
     end
-    out += link_to 'Back', events_path, class: 'button is-outlined'
     out.html_safe
   end
 
