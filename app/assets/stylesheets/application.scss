@@ -17,41 +17,47 @@
 @import "bulma";
 
 .upcoming {
-   height: 40vh;
-   border: 3px solid #f7f1f1;
+  height: 40vh;
+  border: 3px solid #f7f1f1;
 }
 
 .navbar {
-   color: #f7f1f1;
+  color: #f7f1f1;
 }
 
 .event-title {
-   color: #229c8a;
-   font-size: 18px;
-   font-weight: 600;
+  color: #229c8a;
+  font-size: 18px;
+  font-weight: 600;
 }
 
-.event-title:hover { color: black;}
+.event-title:hover {
+  color: black;
+}
 
 .a-reset {
-   color: inherit;
-   text-decoration: none;
+  color: inherit;
+  text-decoration: none;
 }
 
 .new-form-label {
-   font-weight: 500;
-   font-size: 17px;
+  font-weight: 500;
+  font-size: 17px;
 }
 
 .textarea:not([rows]) {
-   min-height: 50px;
-   margin-top: 10px;
+  min-height: 50px;
+  margin-top: 10px;
 }
 
 .new-form-description {
-   height: 120px;
+  height: 120px;
 }
 
-.date { margin-top: -8px; }
+.date {
+  margin-top: -8px;
+}
 
-.date-label { margin-right: 10px; }
+.date-label {
+  margin-right: 10px;
+}
