@@ -26,6 +26,9 @@ module ApplicationHelper
       out += "<p class=\"control\">"
       out += link_to current_user.username, edit_user_registration_path, class: 'button is-primary'
       out += "</p>"
+      out += "<p class=\"control\">"
+      out += link_to 'Your events', user_path(current_user), class:'button is-primary'
+      out += "</p>"
       out += "<p>"
       out += link_to 'Logout', destroy_user_session_path, method: :delete, class:'button is-primary'
       out += "</p>"
