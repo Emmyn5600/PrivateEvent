@@ -1,0 +1,27 @@
+<div class="is-flex is-flex-direction-column">
+  <div class="columns">
+      <p class="title column is-10 is-offset-1 has-text-primary mt-6"><%= @user.username %>'s events</p>
+  </div>
+  <div class="columns">
+    <div class="column is-5 is-offset-1 mt-3">
+      <p class="subtitle is-4">Events created by you:</p>
+      <%= show_user_event_list(@user_events) %>
+      <%= no_created_events %>
+      <p><%= link_to 'Back to Homepage', events_path, class: 'button is-outlined mt-6' %></p>
+    </div>
+
+    <div class="column is-5 is-offset-1 mt-3">
+      <p class="subtitle is-4">Events Attendance:</p>
+      <p class="subtitle has-text-primary">Upcoming Events:</p>
+      <ol>
+        <%= no_upcoming_events %>
+        <%= user_upcoming_events %>
+      </ol>
+      <p class="subtitle has-text-primary mt-6">Past Events:</p>
+      <ol>
+        <%= no_past_events %>
+        <%= user_past_events %>
+      </ol>
+    </div>
+  </div>
+</div>

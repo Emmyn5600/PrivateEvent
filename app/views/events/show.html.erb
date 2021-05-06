@@ -1,0 +1,39 @@
+<div class="columns">
+  <div class="column columns is-half is-offset-one-quarter box mt-6">
+    <div class="column is-10 is-offset-1">
+    <p class="title">
+      <%= @event.title %>
+    </p>
+
+    <p class="mb-4">
+      <b class="has-text-primary">Description:</b><br>
+      <%= @event.description %>
+    </p>
+
+    <p class="mb-4">
+      <i class="fa fa-calendar-o has-text-primary is-size-5 mr-2" aria-hidden="true"></i> 
+      <%= @event.date %>
+    </p>
+
+    <p class="mb-4">
+      <i class="fa fa-map-marker has-text-primary is-size-4 mr-3" aria-hidden="true"></i> 
+      <%= @event.location %>
+    </p>
+
+    <p class="my-3 has-text-primary">
+    Attendees:
+    <ol>
+      <%= show_attendee_lists(@attendees) %>
+    </ol>
+    </p>
+
+    <p class="mt-4">
+      <%= render 'attend_cancel' %>
+    </p>
+
+    <p class="my-4">
+      <%= event_controls(@event) %>
+    </p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,6 @@
+<% if user_signed_in? %>
+	<%= form_for(current_user.event_attendees.build(attended_event_id: @event.id)) do |f| %>
+	<%= f.hidden_field :attended_event_id %>
+		<%= f.submit "Attend Event", class: "button is-primary" %>
+	<% end %>
+<% end %>

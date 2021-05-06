@@ -1,16 +1,42 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>PrivateEvent</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Private Event</title>
     <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" %>
   </head>
 
   <body>
+    <%= notice_flash %> 
+    <%= alert_flash %>
+
+  	<nav class="navbar is-primary is-light">
+  		<div class="navbar-brand">
+  		<%= link_to root_path, class: "navbar-item" do %>
+  			<h1 class="title is-4 has-text-white">Private Events</h1>
+      <% end %>
+			<div class="navbar-burger burger" data-target="navbarExample">
+					<span></span>
+					<span></span>
+					<span></span>
+  		</div>
+  	 </div>
+
+			<div id="navbarExample" class="navbar-menu">
+				<div class="navbar-end">
+          <div class="navbar-item">
+            <div class="field is-grouped">
+              <p class="control">
+                <%= navbar_user_control %>
+              </p>
+            </div>
+					</div>
+				</div>
+			</div>
+  	</nav>
+
     <%= yield %>
   </body>
 </html>

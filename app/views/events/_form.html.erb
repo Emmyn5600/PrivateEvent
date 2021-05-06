@@ -1,0 +1,20 @@
+<%= simple_form_for(@event) do |f| %>
+<%= f.error_notification %>
+<%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+  
+  <%= f.input :title, label: "Event Title:", input_html: { class: "textarea" }, label_html: { class: 'new-form-label' }, wrapper: false %>
+  <br>
+  <%= f.input :description, label: "Description:", input_html: { class: "textarea new-form-description" }, label_html: { class: 'new-form-label' }, wrapper: false, placeholder: "Describe your event" %>
+  <br>
+  <%= f.input :location, label: "Location:", input_html: { class: " textarea" }, label_html: { class: 'new-form-label' }, wrapper: false, placeholder: "Where is it going to be?"  %>
+  <br>
+
+  <div class="is-flex is-align-content-center mt-5">
+  <%= f.input :date, label: "Date:", input_html: { class: "date button is-flex is-align-content-center mx-1 is-primary is-outlined" }, wrapper: false, label_html: { class: 'new-form-label date-label' } %>
+  </div>
+  
+  <p class="mt-5 pt-3 is-flex">
+    <%= f.button :submit, class: 'button is-primary' %>
+  </p>
+  <br>
+<% end %>
