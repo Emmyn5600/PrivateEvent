@@ -20,13 +20,13 @@ module EventsHelper
         out += "<li class=\"ml-6\">#{attendee.username}</li>"
       end
     else
-      out += "<button class=\"button is-primary\" title=\"Disabled button\" disabled>Sign up or Log in to attend this event</button>"
+      out += '<button class="button is-primary" title="Disabled button" disabled>Sign up or Log in to attend this event</button>'
     end
     out.html_safe
   end
 
   def event_controls(event)
-    out = "<div class=\"is-flex mb-3\">"
+    out = '<div class="is-flex mb-3">'
     if user_signed_in? && current_user.id == event.creator_id
       out += link_to 'Edit', edit_event_path(@event), class: 'button is-warning is-outlined mr-2'
       out += button_to 'Delete', event, method: :delete, data: { confirm: 'Are you sure?' },

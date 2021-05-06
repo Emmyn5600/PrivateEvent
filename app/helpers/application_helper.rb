@@ -26,7 +26,7 @@ module ApplicationHelper
       out += link_to 'Create Event', new_event_url, class: 'button ml-2 is-primary is-inverted'
       out += '</p>'
       out += '<p>'
-      out += link_to 'Your events', user_path(current_user), class: 'button ml-2 is-primary has-text-weight-bold' 
+      out += link_to 'Your events', user_path(current_user), class: 'button ml-2 is-primary has-text-weight-bold'
       out += '</p>'
       out += '<p>'
       out += link_to current_user.username, edit_user_registration_path, class: 'button ml-2 is-primary'
