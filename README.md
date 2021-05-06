@@ -8,6 +8,13 @@
   <a href="https://github.com/Emmyn5600/PrivateEvent">
     <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/Emmyn5600/PrivateEvent/development?color=blue&style=flat-square">
   </a>
+   <a href="https://github.com/Emmyn5600/PrivateEvent">
+    <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/Emmyn5600/PrivateEvent?color=pink&label=%E2%98%85%20stars%20&style=flat-square">
+  </a>
+  <a href="https://github.com/Emmyn5600/PrivateEvent">
+    <img alt="GitHub followers" src="https://img.shields.io/github/followers/Emmyn5600?color=yellow&logo=github&style=flat-square">
+  </a>
+</p>
 </p>
 
 
