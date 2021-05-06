@@ -2,18 +2,18 @@
   <a href="https://www.microverse.org/">
     <img alt="Microverse" src="https://img.shields.io/badge/-Microverse-blueviolet?style=flat-square">
   </a>
-  <a href="https://github.com/VanessaAoki/MembersOnly/blob/development/LICENSE">
-    <img alt="MIT Licensed" src="https://img.shields.io/github/license/VanessaAoki/MembersOnly?style=flat-square">
+  <a href="https://github.com/Emmyn5600/PrivateEvent/blob/development/LICENSE">
+    <img alt="MIT Licensed" src="https://img.shields.io/github/license/Emmyn5600/PrivateEvent?style=flat-square">
   </a>
-  <a href="https://github.com/VanessaAoki/MembersOnly">
-    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/VanessaAoki/MembersOnly/authentication?color=blue&style=flat-square">
+  <a href="https://github.com/Emmyn5600/PrivateEvent">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/Emmyn5600/PrivateEvent/development?color=blue&style=flat-square">
   </a>
 </p>
 
 
 # Private Events (Eventbrite)
-> This is an exclusive app where users can create events and then manage user signups.
-> Users can create events and send invitations and parties [the Odin Project’s](https://www.theodinproject.com/courses/ruby-on-rails/lessons/associations).
+This is an app, created with Ruby on Rails, developed for you to create and attend events!
+> This is the 5th project of the Micoverse's Ruby on Rails module, the full description can be found at [the Odin Project’s](https://www.theodinproject.com/courses/ruby-on-rails/lessons/associations) website.
 
 ![screenshot](./app/assets/images/img1.png)
 ![screenshot](./app/assets/images/img2.png)
@@ -25,8 +25,8 @@
 **What you can do with this project**
 - You can create Users and Events;
 - Once you sign in, you can:
-  - attend or Ignore meetings;
-  - create events with date and location
+  - create events, with giving it a title, description, date, and location;
+  - attend or ignore events;
 
 ## Built With
 
@@ -35,45 +35,38 @@
 - Ruby gems: devise, bulma, simple-forms, sqlite3, puma, sass-rails, webpacker, turbolinks, jbuilder, rubocop;
 - Visual Studio, Git & GitHub;
 
+## Live Server Link
+[Live demo link](https://private-event-1.herokuapp.com/)
+
+
 ## Prerequisites
-Make sure that your system has the proper prerequisites installed. These include:
+To run this project, you need a computer with Ruby and Ruby on Rails installed.
 
-- Ruby
-- SQLite3
-- Node.js
-- Yarn
+> If you are uncertain about how to install Ruby, check out this [tutorial](https://www.theodinproject.com/courses/ruby-programming/lessons/installing-ruby-ruby-programming) made by [The Odin Project](https://www.theodinproject.com/about).
 
-If you need step by step installation guidence, visit [this page](https://guides.rubyonrails.org/getting_started.html#creating-a-new-rails-project-installing-rails).
+> If you are uncertain about how to install Ruby on Rails, check out this [tutorial](https://www.theodinproject.com/paths/full-stack-ruby-on-rails/courses/ruby-on-rails/lessons/your-first-rails-application-ruby-on-rails) made by [The Odin Project](https://www.theodinproject.com/about).
 
 ## Getting Started
 
-To get a local copy up and running follow these simple example steps.
+To get a local copy up and running, follow these simple steps:
 
-- On the project GitHub page, navigate to the main page of the repository [this page](https://github.com/Emmyn5600/PrivateEvent.git).
-- Under the repository name, locate and click on a green button named `Code`.
-- Copy the project URL as displayed.
-- If you're running Windows Operating System, open your command prompt. On Linux, Open your terminal.
-- Change the current working directory to the location where you want the cloned directory to be made. Leave as it is if the current location is where you want the project to be.
-- Type `git clone`, and then paste the URL you copied in Step 3.<br>
-  `$ git clone https://github.com/Emmyn5600/PrivateEvent.git` <em>Press Enter key</em><br>
-- Press Enter. Your local copy will be created.
+1. In your terminal, type the following, to clone this repository:
+```
+$ git clone https://github.com/Emmyn5600/PrivateEvent.git
+```
+2. Type  `$ cd PrivateEvent` to move to the project folder;
 
-Please Note that you must have Git installed on your PC, this can be done [here](https://gist.github.com/derhuerst/1b15ff4652a867391f03).
+3. Install all required gems by typing `$ bundle install` on the terminal;
 
-## How to use the app?
+4. Migrate the database with `$ rails db:migrate`;
 
-1. Follow Getting Started section to download the app
-2. Open/navigate to the project directory in your terminal
-3. Run `bundle install`
-4. Run `rails db:create`
-5. Migrate, run `rails db:migrate`
+5. Type `$ cd bin` to move to the bin folder, *you must be on this folder to execute the file*;
 
-## How to run tests?
+6. Execute `$ rails server` on the terminal and run `http://localhost:3000` on your browser *(Google Chrome, Mozilla Firefox, Microsoft Edge, Apple Safari, etc.)*;
 
-1. Follow Getting Started section to download the app
-2. Open/navigate to the project directory in your terminal
-3. Run `rails s` or `rails server`.
-4. You will be asked to open `http://localhost:3000/` in your terminal. Open it and you are ready to use with User Interface.
+7. Explore the app, sign up - or sign in if you are already a user - create and attend events;
+
+8. After you are done, stop running the server by clicking `ctrl + C` on your terminal.
 
 ## Authors
 
@@ -106,4 +99,4 @@ Give a ⭐️ if you like this project!
 
 ## 📝 License
 
-This project is [MIT](https://en.wikipedia.org/wiki/MIT_License) licensed.
+This project is [MIT](./LICENSE) licensed.
