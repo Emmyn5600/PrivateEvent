@@ -4,11 +4,7 @@ module EventsHelper
     out = ''
     events.each do |event|
       out += '<div class="box">'
-      out += if user_signed_in?
-               "<ul><li>#{link_to event.title, event_url(event), class: 'event-title'}</li>"
-             else
-               "<ul><li>#{link_to event.title, new_event_path, class: 'event-title'}</li>"
-             end
+      out += "<ul><li>#{link_to event.title, event_url(event), class: 'event-title'}</li>"
       out += "<li><b>Description:</b> #{event.description}</li>"
       out += "<li><b>Date:</b> #{event.date}</li>"
       out += "<li><b>Location:</b> #{event.location}</li></ul>"
@@ -17,26 +13,26 @@ module EventsHelper
     out.html_safe
   end
 
-  def show_attendance_button(_event, attendance)
-    render 'attend', attendance: attendance if user_signed_in?
-  end
-
   def show_attendee_lists(_attendees)
     out = ''
-    @event.attendees.each do |attendee|
-      out += "<li>#{attendee.username}</li>"
+    if user_signed_in?
+      @event.attendees.each do |attendee|
+        out += "<li class=\"ml-6\">#{attendee.username}</li>"
+      end
+    else
+      out += "<button class=\"button is-primary\" title=\"Disabled button\" disabled>Sign up or Log in to attend this event</button>"
     end
     out.html_safe
   end
 
   def event_controls(event)
-    out = '<div class="is-flex mb-3">'
+    out = "<div class=\"is-flex mb-3\">"
     if user_signed_in? && current_user.id == event.creator_id
       out += link_to 'Edit', edit_event_path(@event), class: 'button is-warning is-outlined mr-2'
       out += button_to 'Delete', event, method: :delete, data: { confirm: 'Are you sure?' },
                                         class: 'button is-danger is-outlined mr-2'
     end
-    out += link_to 'Back', events_path, class: 'button is-outlined'
+    out += link_to 'Home', events_path, class: 'button is-primary is-outlined'
     out += '</div>'
     out.html_safe
   end

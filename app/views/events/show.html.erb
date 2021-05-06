@@ -5,24 +5,24 @@
       <%= @event.title %>
     </p>
 
-    <p class="mb-3">
+    <p class="mb-4">
       <b class="has-text-primary">Description:</b><br>
       <%= @event.description %>
     </p>
 
-    <p class="mb-3">
-      <i class="fa fa-calendar-o has-text-primary is-size-6 mr-2" aria-hidden="true"></i> 
+    <p class="mb-4">
+      <i class="fa fa-calendar-o has-text-primary is-size-5 mr-2" aria-hidden="true"></i> 
       <%= @event.date %>
     </p>
 
-    <p class="mb-3">
-      <i class="fa fa-map-marker has-text-primary is-size-4 mr-2" aria-hidden="true"></i> 
+    <p class="mb-4">
+      <i class="fa fa-map-marker has-text-primary is-size-4 mr-3" aria-hidden="true"></i> 
       <%= @event.location %>
     </p>
 
     <p class="my-3 has-text-primary">
     Attendees:
-    <ol class="ml-6">
+    <ol>
       <%= show_attendee_lists(@attendees) %>
     </ol>
     </p>

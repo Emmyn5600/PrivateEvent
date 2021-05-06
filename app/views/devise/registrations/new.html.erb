@@ -4,7 +4,7 @@
 
 		<div class="column is-4">
 			
-		<h2 class="title is-2">Sign Up</h2>
+		<h2 class="title is-2 mb-6">Sign Up</h2>
 
 		<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 	  <%= f.error_notification message: '** Something went wrong **' %>
@@ -42,13 +42,13 @@
 
 		<div class="field">
 			<div class="control">
-		 		<%= f.button :submit, "Sign up", class:"button is-info is-medium" %>
+		 		<%= f.button :submit, "Sign up", class:"button is-primary is-medium mt-5" %>
 		 	</div>
 		</div>
 
 		<% end %>
 			<br />
-			<%= render "devise/shared/links" %>
+			Already have an account? <%= render "devise/shared/links" %>
 		</div>
 		</div>
 	</div>
