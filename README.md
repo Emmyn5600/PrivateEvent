@@ -20,6 +20,7 @@ This is an app, created with Ruby on Rails, developed for you to create and atte
 ![screenshot](./app/assets/images/img3.png)
 ![screenshot](./app/assets/images/img4.png)
 ![screenshot](./app/assets/images/img5.png)
+![screenshot](./app/assets/images/img6.png)
 
 
 **What you can do with this project**
