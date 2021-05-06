@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.7.3'
+ruby '2.7.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.3', '>= 6.1.3.1'
@@ -57,6 +57,8 @@ group :development do
 end
 
 group :test do
+  gem 'shoulda-matchers'
+  gem 'database_cleaner_2', '~> 2.1'
   # The RSpec testing framework
   gem 'rspec-rails', '~> 5.0', '>= 5.0.1'
   # Adds support for Capybara system testing and selenium driver
