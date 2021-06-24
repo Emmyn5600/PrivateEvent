@@ -19,7 +19,7 @@
 
 
 # Private Events (Eventbrite)
-This is an app, created with Ruby on Rails, developed for you to create and attend events!
+This is an exclusive app where users can create events and then manage user signups. Users can create events and send invitations and parties
 > This is the 5th project of the Micoverse's Ruby on Rails module, the full description can be found at [the Odin Project’s](https://www.theodinproject.com/courses/ruby-on-rails/lessons/associations) website.
 
 ![screenshot](./app/assets/images/img1.png)
